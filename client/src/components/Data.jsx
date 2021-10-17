@@ -106,13 +106,20 @@ export class RecordList extends Component {
 //this will create a chart using the data taken from the mongoDB database
 
 export const Chart = () => {
-  <iframe
-  title="Chart showing the historic data of all sensors"
-    style={{background: "#21313C", border: "none", borderRadius: "2px", boxShadow: "0 2px 10px 0 rgba(70, 76, 79, .2)"}}
-    width="640"
-    height="480"
-    src="https://charts.mongodb.com/charts-eficode-nlqti/embed/charts?id=d9a5e446-1157-4aba-9d36-2fb32dfeb348&autoRefresh=28800&theme=dark"
-  ></iframe>;
+
+ 
+    return(
+      <iframe
+      title="Chart showing the historic data of all sensors"
+        style={{background: "#21313C", border: "none", borderRadius: "2px", boxShadow: "0 2px 10px 0 rgba(70, 76, 79, .2)"}}
+        width="640"
+        height="480"
+        src="https://charts.mongodb.com/charts-eficode-nlqti/embed/charts?id=d9a5e446-1157-4aba-9d36-2fb32dfeb348&autoRefresh=28800&theme=dark"
+      ></iframe>
+    
+    );
+   
+    
 
   //   const url = "";
 
