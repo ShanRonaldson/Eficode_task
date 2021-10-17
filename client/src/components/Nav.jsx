@@ -1,14 +1,24 @@
-import React from "react"
-import { NavLink } from "react-router-dom";
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from "react-router-dom";
 
-export function Nav(){
-    return(
-        <div className="nav">
-            <nav>
-                <NavLink to="/">
-                    Link to another page
-                </NavLink>
-            </nav>
-        </div>
-    )
+import { Routes } from "./Routes";
+
+export function Nav() {
+  return (
+    <Router>
+      <Switch>
+          <Route exact path="/">
+              <Redirect to="/home"></Redirect>
+          </Route>
+        <Route path="*">
+          <Routes />
+        </Route>
+      </Switch>
+    </Router>
+  );
 }
