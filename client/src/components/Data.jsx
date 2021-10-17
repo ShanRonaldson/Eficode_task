@@ -19,22 +19,22 @@ const uri = process.env.ATLAS_URI;
 
 //connect to mongodb
 
-const { MongoClient } = require("mongodb");
+// const { MongoClient } = require("mongodb");
 
-const client = new MongoClient(uri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
-//get info from URL + add it to the mongoDB database
-client.connect((err) => {
-  const collection = client.db("eficode").collection("data");
-  collection.insertOne(() => {
-    axios.get(getURL, {
-      headers: { Authorization: `Bearer + ${token}` },
-    });
-  });
-  client.close();
-});
+// const client = new MongoClient(uri, {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
+// //get info from URL + add it to the mongoDB database
+// client.connect((err) => {
+//   const collection = client.db("eficode").collection("data");
+//   collection.insertOne(() => {
+//     axios.get(getURL, {
+//       headers: { Authorization: `Bearer + ${token}` },
+//     });
+//   });
+//   client.close();
+// });
 
 //create a record on how the data will be shown in a table on the webpage
 
@@ -76,7 +76,7 @@ export class RecordList extends Component {
 
   recordList() {
     return this.state.records.map((currentRecord) => {
-      return <Record record={currentRecord} key={currentRecord.__id} />;
+      return <Record record={currentRecord} key={currentRecord._id} />;
     });
   }
 
@@ -112,6 +112,7 @@ export const Chart = () => {
       <iframe
       title="Chart showing the historic data of all sensors"
         style={{background: "#21313C", border: "none", borderRadius: "2px", boxShadow: "0 2px 10px 0 rgba(70, 76, 79, .2)"}}
+        className="chart"
         width="640"
         height="480"
         src="https://charts.mongodb.com/charts-eficode-nlqti/embed/charts?id=d9a5e446-1157-4aba-9d36-2fb32dfeb348&autoRefresh=28800&theme=dark"

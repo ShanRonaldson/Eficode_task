@@ -14,8 +14,13 @@ body {
   :link,
   :visited,
   :hover,
-  :active {
+  :active{
     color: inherit;
     text-decoration: none;
   }
-  
+
+
+.content{
+  display: flex;
+  justify-content: center;
+}

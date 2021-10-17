@@ -24,8 +24,8 @@ export function Footer() {
   return (
     <StyledFooter className="footer">
       <div className="footer__info">
-        Created by Shannon Schrauwen for Megaventory Internship task. <br />
-        Tech stack: React (using create-react-app) <span></span>
+        Created by Shannon Schrauwen for Eficode <br />
+        Tech stack: React (using create-react-app), Node.JS <span></span>
         <FontAwesomeIcon icon={["fab", "react"]} className="footer--icons" />
       </div>
 
@@ -48,13 +48,6 @@ export function Footer() {
         >
           <FontAwesomeIcon icon={["fab", "linkedin-in"]} />
         </StyledIcon>
-        <a href="https://shanschrauwen.com/" className="footer__link">
-          <StyledImg
-            src="./images/shannon_schrauwen_website.png"
-            alt="Shannon Schrauwen portfolio site logo"
-            className="footer--img"
-          />
-        </a>
       </div>
     </StyledFooter>
   );
